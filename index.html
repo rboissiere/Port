@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Renée Boissière · Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+<style>
+/* Home story cards carry each story page's own palette */
+.cases { gap: 1.25rem; }
+.case, .case:last-child { border: 0; }
+.case a { padding: 2rem; border-radius: 18px; color: #14232a; }
+.case a .meta p { color: #3b4b52; }
+.case a .eyebrow { color: #4a5d63; }
+.case .thumb { background: rgba(255,255,255,.6); }
+.case.c-hygiena a { background: linear-gradient(135deg, #d6e8f5 0%, #e9f6fd 55%, #fbe3f0 100%); }
+.case.c-hygiena .eyebrow b, .case.c-hygiena .go { color: #0b6fb8; }
+.case.c-basepair a { background: linear-gradient(135deg, #e6e1fa 0%, #f3f0ff 60%, #e3f6f3 100%); }
+.case.c-basepair .eyebrow b, .case.c-basepair .go { color: #5b3fd1; }
+.case.c-citrine a { background: linear-gradient(135deg, #fde1c4 0%, #ece8f6 55%, #d9ecf7 100%); }
+.case.c-citrine .eyebrow b, .case.c-citrine .go { color: #c25a00; }
+.case.c-care a { background: linear-gradient(140deg, #e3f0ea 0%, #d8ebe6 50%, #eef6f1 100%); }
+.case.c-care .eyebrow b, .case.c-care .go { color: #1f5c5f; }
+.case.c-care .thumb { background: transparent; }
+.case.c-fooducate a { background: linear-gradient(135deg, #fde5d6 0%, #fff4ec 60%, #e9f7ec 100%); }
+.case.c-fooducate .eyebrow b, .case.c-fooducate .go { color: #c4520f; }
+.case.c-care .thumb img { max-height: 22rem; width: auto; margin-inline: auto; border-radius: 14px; }
+@media (max-width: 52rem) { .case a { padding: 1.25rem; } }
+.card-metrics { list-style: none; margin: .25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+.card-metrics li { background: rgba(255,255,255,.7); border-radius: 12px; padding: .8rem .9rem; display: grid; gap: .2rem; align-content: start; }
+.card-metrics b { font: 700 clamp(1.3rem, 2.6vw, 1.75rem)/1.05 var(--f-display); font-stretch: 105%; color: #14232a; }
+.card-metrics span { font: 500 .78rem/1.3 var(--f-mono); color: #4a5d63; }
+.case.c-hygiena .card-metrics b { color: #0b6fb8; } .case.c-basepair .card-metrics b { color: #5b3fd1; }
+.case.c-citrine .card-metrics b { color: #c25a00; } .case.c-care .card-metrics b { color: #1f5c5f; } .case.c-fooducate .card-metrics b { color: #c4520f; }
+/* Colorful process cards, using the story palettes */
+.method { gap: 1rem; }
+.method li { border-top: 0; border-radius: 18px; padding: 1.4rem 1.25rem 1.5rem; color: #14232a; gap: .5rem; }
+.method li h3 { color: #14232a; }
+.method li p { color: #3b4b52; }
+.method li::before { display: inline-grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 999px; background: #ffffff; font: 700 .85rem/1 var(--f-mono); margin-bottom: .35rem; }
+.method li:nth-child(1) { background: linear-gradient(160deg, #d6e8f5, #e9f6fd); } .method li:nth-child(1)::before { color: #0b6fb8; }
+.method li:nth-child(2) { background: linear-gradient(160deg, #e6e1fa, #f3f0ff); } .method li:nth-child(2)::before { color: #5b3fd1; }
+.method li:nth-child(3) { background: linear-gradient(160deg, #fde1c4, #fbefe2); } .method li:nth-child(3)::before { color: #c25a00; }
+.method li:nth-child(4) { background: linear-gradient(160deg, #ffe0d6, #ffe9ef); } .method li:nth-child(4)::before { color: #d9452f; }
+.method li:nth-child(5) { background: linear-gradient(160deg, #dcf2e6, #eef9f1); } .method li:nth-child(5)::before { color: #2f7d5b; }
+@media (max-width: 52rem) { .method { grid-template-columns: minmax(0, 1fr); } }
+.case .thumb { height: 12rem !important; padding: 1.5rem 2rem !important; display: grid !important; place-items: center; }
+.case .thumb img, .case .thumb svg { max-width: 18rem !important; max-height: 6.5rem !important; width: 100% !important; height: 100% !important; object-fit: contain; }
+.cases > li, .cases > li > a { min-height: 17.5rem; }
+.cases > li > a { height: 100%; }
+.case .thumb:has(img[alt="SureTrend Cloud logo"]) { padding: .75rem 1rem !important; }
+.case .thumb img[alt="SureTrend Cloud logo"] { max-height: 10.5rem !important; max-width: 22rem !important; }
+.hero-map-wrap .wrap { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: 2rem; }
+.hero-map-wrap h1 { font-size: clamp(2.2rem, 4.6vw, 3.9rem); }
+.hero-map { margin: 0; }
+.hero-map figcaption { text-align: center; font-weight: 600; font-size: var(--step--1); color: #6a4cf0; margin-top: .25rem; }
+.hero-map svg { display: block; width: 100%; height: auto; max-width: 42rem; margin-inline: auto; }
+@media (max-width: 56rem) { .hero-map-wrap .wrap { grid-template-columns: minmax(0, 1fr); } }
+.hero-intro .wrap { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(2rem, 5vw, 4rem); }
+.hero-intro h1 { font-size: clamp(2.3rem, 4.6vw, 3.9rem); }
+.headshot { width: clamp(15rem, 30vw, 24rem); height: clamp(15rem, 30vw, 24rem); border-radius: 50%; object-fit: cover; margin-bottom: 1.25rem; border: 5px solid #fff; box-shadow: 0 0 0 3px #6a4cf0, 0 14px 30px rgba(20,35,42,.18); }
+.hero-name { margin: 0 0 1rem; font-weight: 800; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.1; color: #5b3fd1; letter-spacing: -.01em; }
+.hero-intro h1.stack { display: grid; gap: .1em; line-height: 1; }
+.hero-intro h1.stack .s-small { font-size: .42em; font-weight: 600; color: #4a5d63; letter-spacing: .01em; }
+.hero-intro h1.stack .s-big { font-size: .86em; white-space: nowrap; }
+@media (min-width: 56.01rem) { .hero-intro .wrap { grid-template-columns: max-content minmax(0, 28rem) !important; justify-content: center; column-gap: clamp(2.5rem, 5vw, 4.5rem) !important; } }
+.hero-intro h1.stack .s-grad { background: linear-gradient(90deg, #2aa8e0, #6a4cf0 55%, #ff9a3c); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-bottom: .08em; }
+.hero-intro .lede { font-size: var(--step-1); max-width: 30ch; }
+.hero-cta { display: inline-block; width: fit-content; justify-self: start; margin-top: 1.5rem; padding: .9rem 1.4rem; border-radius: 999px; background: #14232a; color: #fff; font-weight: 700; text-decoration: none; }
+.hero-cta:hover { background: #2a3d45; }
+.thread { list-style: none; margin: 0; padding: 0 0 0 1.5rem; position: relative; display: grid; gap: 1.1rem; }
+.thread::before { content: ""; position: absolute; left: .55rem; top: 2.5rem; bottom: 2.5rem; width: 6px; border-radius: 6px; background: linear-gradient(180deg, #2aa8e0, #6a4cf0 50%, #ff9a3c); }
+.thread li { position: relative; display: grid; grid-template-columns: 4.25rem minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 1.1rem; align-items: center; padding: 1.2rem 1.4rem; border-radius: 22px; }
+.thread li::before { content: ""; position: absolute; left: -1.38rem; top: 50%; width: 1.1rem; height: 1.1rem; margin-top: -.55rem; border-radius: 50%; background: #fff; border: 4px solid var(--c); }
+.thread .t1 { --c: #2aa8e0; background: linear-gradient(160deg, #d6e8f5, #eaf6fd); }
+.thread .t2 { --c: #6a4cf0; background: linear-gradient(160deg, #e6e1fa, #f4f1ff); }
+.thread .t3 { --c: #ff9a3c; background: linear-gradient(160deg, #ffe2cf, #fff0e6); }
+.thread-icon { grid-row: 1 / span 2; width: 4.25rem; height: 4.25rem; border-radius: 18px; display: grid; place-items: center; background: var(--c); box-shadow: 0 10px 22px rgba(20,35,42,.15); }
+.thread-icon svg { width: 2.8rem; height: 2.8rem; }
+.thread-step { font-weight: 700; font-size: 1.05rem; color: #14232a; }
+.thread-num { font-weight: 800; font-size: clamp(1.9rem, 3.4vw, 2.5rem); line-height: 1.05; color: var(--c); filter: brightness(.82); }
+.thread-label { font-size: 1rem; color: #3b4b52; }
+@media (max-width: 56rem) { .hero-intro .wrap { grid-template-columns: minmax(0, 1fr); } }
+.case .thumb svg[aria-label="Telehealth logo"] { max-width: 21rem !important; max-height: 7.5rem !important; }
+footer.site .contact { margin: 0 0 .6rem; font-weight: 600; font-size: 1rem; color: #14232a; }
+footer.site .contact a { color: inherit; }
+.case .thumb img[src$="tennis-logo.svg"] { max-width: 26rem !important; max-height: 8rem !important; }
+.case .thumb:has(img[src$="tennis-logo.svg"]) { padding: 1rem !important; }
+</style>
+</head>
+<body class="c-hygiena">
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="index.html">Renée Boissière<span>.</span></a>
+    <nav class="nav" aria-label="Case studies">
+      <a href="hygiena-ensure-touch.html">Hygiena</a>
+      <a href="hygiena-suretrend-cloud.html">SureTrend</a>
+      <a href="basepair.html">Basepair</a>
+      <a href="citrine.html">Citrine</a>
+      <a href="telehealth.html">Telehealth</a>
+      <a href="fooducate.html">Fooducate</a>
+      <a href="tennis.html">Tennis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-intro">
+    <div class="wrap">
+      <div class="hero-text">
+        <img class="headshot" src="assets/photos/headshot.jpg" alt="Portrait of Renée Boissière" onerror="this.remove()">
+        <p class="hero-name">Renée Boissière</p>
+        <h1 class="stack"><span class="s-small">Turning</span><span class="s-big">first-time visitors</span><span class="s-small">into</span><span class="s-big s-grad">forever fans.</span></h1>
+      </div>
+      <ol class="thread" aria-label="How every story works">
+        <li class="t1">
+          <span class="thread-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 12h20a6 6 0 0 1 6 6v8a6 6 0 0 1-6 6H20l-8 7v-7h-2a6 6 0 0 1-6-6v-8a6 6 0 0 1 6-6z" fill="#fff"/><path d="M30 22h8a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6h-1v5l-6-5h-1a6 6 0 0 1-6-6" fill="#fff" opacity=".6"/></svg></span>
+          <span class="thread-num">1,600+</span>
+          <span class="thread-label">Voices heard in one study</span>
+        </li>
+        <li class="t2">
+          <span class="thread-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h14a4 4 0 0 1 4 4v26a3 3 0 0 0-3-3H8z" fill="#fff" opacity=".7"/><path d="M40 10H26a4 4 0 0 0-4 4v26a3 3 0 0 1 3-3h15z" fill="#fff"/><path d="M31 18l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z" fill="#ffd166"/></svg></span>
+          <span class="thread-num">NPS 72</span>
+          <span class="thread-label">Net Promoter Score achieved</span>
+        </li>
+        <li class="t3">
+          <span class="thread-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 42V18a12 12 0 0 1 24 0v24z" fill="#fff"/><path d="M17 42V20a7 7 0 0 1 14 0v22z" fill="#ffd38a"/><circle cx="27" cy="31" r="1.6" fill="#c25a00"/><path d="M6 42h36" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>
+          <span class="thread-num">$100M+</span>
+          <span class="thread-label">ARR Portfolio Ownership</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>My Process</h2>
+      </div>
+      <ol class="method">
+        <li><h3>Listen</h3><p>Surveys, one-on-one conversations, and insights from experts to build context.</p></li>
+        <li><h3>Understand</h3><p>Discover what people value, what holds them back, and what would bring them closer.</p></li>
+        <li><h3>Shape</h3><p>Build the message, the experience, and the invitation around what will resonate most.</p></li>
+        <li><h3>Launch</h3><p>Events, stories, and an easy way in, whether physical, digital or in person.</p></li>
+        <li><h3>Grow</h3><p>See who came back, who joined, and who brought someone with them. Learn from challenges and change so the next time is even better.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2 id="stories">Selected Stories</h2>
+      </div>
+      <ul class="cases">
+        <li class="case c-hygiena">
+          <a href="hygiena-ensure-touch.html">
+            <div class="meta">
+              <p class="eyebrow"><b>EnSURE Touch</b> · Founding Marketing &amp; Product Hire</p>
+              <h3>Repositioning an Underdog</h3>
+              <ul class="card-metrics"><li><b>$12M</b><span>New sales</span></li><li><b>72</b><span>Net Promoter Score</span></li><li><b>Award</b><span>Infection Control Today</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/photos/hygiena/ensure-touch-logo.png" alt="EnSURE Touch logo" style="max-width:20rem;width:100%;height:auto;object-fit:contain"></div>
+          </a>
+        </li>
+        <li class="case c-hygiena">
+          <a href="hygiena-suretrend-cloud.html">
+            <div class="meta">
+              <p class="eyebrow"><b>SureTrend Cloud</b> · Founding Marketing &amp; Product Hire</p>
+              <h3>From One-Time Visitors to Active Users</h3>
+              <ul class="card-metrics"><li><b>1st</b><span>Subscription software</span></li><li><b>10%</b><span>Revenue from software</span></li><li><b>Daily</b><span>Use, not once a year</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/photos/hygiena/suretrend-cloud-logo.svg" alt="SureTrend Cloud logo" style="max-width:20rem;width:100%"></div>
+          </a>
+        </li>
+        <li class="case c-basepair">
+          <a href="basepair.html">
+            <div class="meta">
+              <p class="eyebrow"><b>Basepair</b> · Founding Marketing &amp; Product Hire</p>
+              <h3>Building an Audience From Scratch</h3>
+              <ul class="card-metrics"><li><b>3×</b><span>Revenue</span></li><li><b>+32%</b><span>New customers stayed</span></li><li><b>90%</b><span>Visitors stayed to explore</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/photos/basepair/logo-wordmark.png" alt="Basepair logo" style="max-width:20rem;width:100%;height:auto;object-fit:contain"></div>
+          </a>
+        </li>
+        <li class="case c-citrine">
+          <a href="citrine.html">
+            <div class="meta">
+              <p class="eyebrow"><b>Citrine Informatics</b> · Product Management</p>
+              <h3>Expanding Audiences</h3>
+              <ul class="card-metrics"><li><b>+27%</b><span>Active users</span></li><li><b>+37%</b><span>First-try success</span></li><li><b>~3 hrs</b><span>Saved per person, daily</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/photos/citrine/logo-wordmark.png" alt="Citrine Informatics logo" style="max-width:20rem;width:100%;height:auto;object-fit:contain"></div>
+          </a>
+        </li>
+        <li class="case c-care">
+          <a href="telehealth.html">
+            <div class="meta">
+              <p class="eyebrow"><b>European Telehealth</b> · Product &amp; Marketing Lead</p>
+              <h3>Improving User Experience</h3>
+              <ul class="card-metrics"><li><b>+22</b><span>NPS points</span></li><li><b>80%</b><span>Helped within 30 min</span></li><li><b>4.9★</b><span>App rating</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><svg viewBox="2 6 412 110" role="img" aria-label="Telehealth logo" style="max-width:20rem;width:100%;height:auto">
+              <defs><linearGradient id="thg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b8c87"/><stop offset="1" stop-color="#173d44"/></linearGradient></defs>
+              <path d="M22 12h72a16 16 0 0 1 16 16v50a16 16 0 0 1-16 16H54l-22 18v-18H22A16 16 0 0 1 6 78V28a16 16 0 0 1 16-16z" fill="url(#thg)"/>
+              <path d="M50 30h16v14h14v16H66v14H50V60H36V44h14z" fill="#fff"/>
+              <circle cx="98" cy="18" r="10" fill="#7fd1a8" stroke="#fff" stroke-width="4"/>
+              <text x="130" y="68" font-family="Archivo, sans-serif" font-size="52" font-weight="300" letter-spacing="-1" fill="#1f5c5f">tele<tspan font-weight="800" fill="#173d44">health</tspan></text>
+              <text x="132" y="98" font-family="Archivo, sans-serif" font-size="15" font-weight="600" letter-spacing="3.5" fill="#2b8c87">Care From Home</text>
+            </svg></div>
+          </a>
+        </li>
+        <li class="case c-fooducate">
+          <a href="fooducate.html">
+            <div class="meta">
+              <p class="eyebrow"><b>Fooducate</b> · Product &amp; Marketing Lead</p>
+              <h3>Growing a Health Community</h3>
+              <ul class="card-metrics"><li><b>+49%</b><span>Revenue</span></li><li><b>+23%</b><span>Daily users</span></li><li><b>4.6★</b><span>App rating</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/photos/fooducate/logo-wordmark.png" alt="Fooducate logo" style="max-width:20rem;width:100%;height:auto;object-fit:contain"></div>
+          </a>
+        </li>
+        <li class="case c-tennis">
+          <a href="tennis.html">
+            <div class="meta">
+              <p class="eyebrow"><b>LA Women's Tennis</b> · Founder</p>
+              <h3>Strangers to Regulars, In Person</h3>
+              <ul class="card-metrics"><li><b>500+</b><span>Members in 5 months</span></li><li><b>14</b><span>Events hosted</span></li><li><b>Featured</b><span>By Bumble BFF</span></li></ul>
+              <span class="go">Read the story →</span>
+            </div>
+            <div class="thumb" style="background:transparent;display:grid;place-items:center;padding:3rem 2rem"><img src="assets/illustrations/tennis-logo.svg" alt="LA Women's Tennis logo"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap"><p class="contact"><a href="https://www.linkedin.com/in/renee-boissiere/" target="_blank" rel="noopener">LinkedIn</a></p>All company names, logos, products, images and trademarks belong to their respective owners and are shown only to illustrate my work. Illustrations are original.</div>
+</footer>
+</body>
+</html>

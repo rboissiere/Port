@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Improving User Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+<style>
+/* Finding Care page: airy mint and deep teal, with colorful spot icons. */
+.c-care { --brand: #1f5c5f; --th-ink:#14333a; --th-ink2:#55696c; --th-teal:#1f6b6c; --th-deep:#173d44; --th-mint:#d9f3ee; }
+.c-care .eyebrow b { color: var(--th-teal); }
+.c-care .th-stage { position: relative; margin: 0; min-width: 0; border-radius: 26px; padding: 2.5rem 1rem 2.75rem; display: grid; justify-items: center; background: #f4fbf9; overflow: hidden; isolation: isolate; }
+.c-care .th-stage::before { content: ""; position: absolute; z-index: -1; width: 82%; aspect-ratio: 1; left: 9%; top: 6%; border-radius: 46% 54% 52% 48% / 50% 44% 56% 50%; background: #d9f3ee; }
+.c-care .th-phone { position: relative; width: min(16.5rem, 100%); aspect-ratio: 9 / 18.5; background: #111c1e; border-radius: 2.5rem; padding: .6rem; box-shadow: 0 28px 50px rgba(20,60,60,.28); }
+.c-care .th-notch { position: absolute; top: .85rem; left: 50%; translate: -50% 0; width: 5rem; height: 1.2rem; background: #111c1e; border-radius: 999px; z-index: 2; }
+.c-care .th-screen { height: 100%; border-radius: 1.95rem; overflow: hidden; background: #ffffff; display: flex; flex-direction: column; font-family: var(--f-display); color: var(--th-ink); }
+.c-care .th-screen p { margin: 0; }
+.c-care .th-bar { display: flex; justify-content: space-between; align-items: center; padding: 2.4rem .9rem .55rem; font: 600 .68rem/1 var(--f-display); color: var(--th-ink); border-bottom: 1px solid #e6eeec; }
+.c-care .th-bar i { font-style: normal; color: var(--th-teal); font-size: .85rem; }
+.c-care .th-art { background: #e8f7f3; display: grid; place-items: center; padding: .8rem 0 .6rem; }
+.c-care .th-art svg { width: 5.2rem; height: 5.2rem; }
+.c-care .th-body { padding: .8rem .9rem .9rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.c-care .th-kicker { font: 600 .56rem/1 var(--f-display); letter-spacing: .08em;  color: var(--th-ink2); }
+.c-care .th-title { font: 800 1.08rem/1.1 var(--f-display); color: var(--th-deep); }
+.c-care .th-desc { font-size: .66rem; line-height: 1.4; color: var(--th-ink2); }
+.c-care .th-mods { list-style: none; margin: .1rem 0 0; padding: 0; display: grid; }
+.c-care .th-mods li { display: flex; align-items: center; gap: .55rem; padding: .45rem 0; border-bottom: 1px solid #eef3f2; font: 600 .66rem/1.25 var(--f-display); color: var(--th-ink); }
+.c-care .th-mods li::after { content: ""; margin-left: auto; width: .38rem; height: .38rem; border-top: 2px solid var(--th-teal); border-right: 2px solid var(--th-teal); transform: rotate(45deg); }
+.c-care .th-mods b { flex: none; width: 1.35rem; height: 1.35rem; border-radius: 50%; display: grid; place-items: center; font-size: .6rem; color: #fff; background: var(--th-teal); }
+.c-care .th-mods .lk { color: #9aa9ab; } .c-care .th-mods .lk b { background: #e3eae9; color: #8a9a9c; }
+.c-care .th-cta { margin-top: auto; text-align: center; background: var(--th-teal); color: #fff; font: 700 .7rem/1 var(--f-display); padding: .7rem; border-radius: .55rem; }
+.c-care .th-spot { position: absolute; width: 4.2rem; height: 4.2rem; border-radius: 48% 52% 55% 45% / 52% 46% 54% 48%; display: grid; place-items: center; box-shadow: 0 10px 22px rgba(20,60,60,.16); }
+.c-care .th-spot svg { width: 2.2rem; height: 2.2rem; }
+.c-care .th-spot.s1 { top: 9%; left: 7%; background: #ffd8c9; }
+.c-care .th-spot.s2 { top: 13%; right: 8%; background: #ffe7a8; }
+.c-care .th-spot.s3 { bottom: 26%; left: 5%; background: #d9d2ff; }
+.c-care .th-spot.s4 { bottom: 10%; right: 7%; background: #ffc9da; }
+.c-care .th-spot.s5 { top: 46%; right: 3%; width: 3.3rem; height: 3.3rem; background: #c8eedf; }
+@media (max-width: 52rem) { .c-care .th-spot { display: none; } }
+.c-care .th-journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; position: relative; }
+.c-care .th-journey::before { content: ""; position: absolute; left: 6%; right: 6%; top: 3.1rem; height: 6px; border-radius: 6px; background: linear-gradient(90deg, #2b8c87, #d23a6b, #6a4cf0, #ff9a3c); opacity: .5; }
+.c-care .th-journey li { position: relative; border-radius: 22px; padding: 1.3rem 1.3rem 1.5rem; display: grid; gap: .5rem; align-content: start; }
+.c-care .th-journey .j1 { --c: #2b8c87; background: linear-gradient(160deg, #d9f3ee, #eefaf6); }
+.c-care .th-journey .j2 { --c: #d23a6b; background: linear-gradient(160deg, #ffe0ea, #fff1f5); }
+.c-care .th-journey .j3 { --c: #6a4cf0; background: linear-gradient(160deg, #e6e1fa, #f4f1ff); }
+.c-care .th-journey .j4 { --c: #ff9a3c; background: linear-gradient(160deg, #ffe2cf, #fff0e6); }
+.c-care .j-ic { width: 3.6rem; height: 3.6rem; border-radius: 16px; display: grid; place-items: center; background: var(--c); box-shadow: 0 10px 20px rgba(20,35,42,.15); }
+.c-care .j-ic svg { width: 2.4rem; height: 2.4rem; }
+.c-care .th-journey h3 { margin: .4rem 0 0; color: #14232a; }
+.c-care .th-journey p { margin: 0; color: #3b4b52; }
+.c-care .block-head p { max-width: 46rem; color: var(--ink-2); margin-top: .5rem; font-size: var(--step-1); }
+.c-care .th-needs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.c-care .th-needs li { border-radius: 22px; padding: 1.4rem; display: grid; gap: .45rem; background: #fff; border-top: 6px solid var(--c); box-shadow: 0 8px 22px rgba(20,60,60,.08); }
+.c-care .th-needs b { font-size: 1.2rem; color: var(--c); }
+.c-care .th-needs span { color: #3b4b52; }
+.c-care .th-needs .n1 { --c: #1f6b6c; } .c-care .th-needs .n2 { --c: #c25a00; } .c-care .th-needs .n3 { --c: #5b3fd1; } .c-care .th-needs .n4 { --c: #d23a6b; }
+@media (max-width: 56rem) { .c-care .th-journey, .c-care .th-needs { grid-template-columns: minmax(0, 1fr); } .c-care .th-journey::before { display: none; } }
+footer.site .contact { margin: 0 0 .6rem; font-weight: 600; font-size: 1rem; color: #14232a; }
+footer.site .contact a { color: inherit; }
+</style>
+</head>
+<body class="c-care">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="index.html">Renée Boissière<span>.</span></a>
+    <nav class="nav" aria-label="Case studies">
+      <a href="hygiena-ensure-touch.html">Hygiena</a>
+      <a href="hygiena-suretrend-cloud.html">SureTrend</a>
+      <a href="basepair.html">Basepair</a>
+      <a href="citrine.html">Citrine</a>
+      <a href="telehealth.html" aria-current="page">Telehealth</a>
+      <a href="fooducate.html">Fooducate</a>
+      <a href="tennis.html">Tennis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="brand-logo"><svg viewBox="2 6 412 110" role="img" aria-label="Telehealth logo" style="height:3.2rem;width:auto;display:block">
+              <defs><linearGradient id="thg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b8c87"/><stop offset="1" stop-color="#173d44"/></linearGradient></defs>
+              <path d="M22 12h72a16 16 0 0 1 16 16v50a16 16 0 0 1-16 16H54l-22 18v-18H22A16 16 0 0 1 6 78V28a16 16 0 0 1 16-16z" fill="url(#thg2)"/>
+              <path d="M50 30h16v14h14v16H66v14H50V60H36V44h14z" fill="#fff"/>
+              <circle cx="98" cy="18" r="10" fill="#7fd1a8" stroke="#fff" stroke-width="4"/>
+              <text x="130" y="68" font-family="Archivo, sans-serif" font-size="52" font-weight="300" letter-spacing="-1" fill="#1f5c5f">tele<tspan font-weight="800" fill="#173d44">health</tspan></text>
+              <text x="132" y="98" font-family="Archivo, sans-serif" font-size="15" font-weight="600" letter-spacing="3.5" fill="#2b8c87">Care From Home</text>
+            </svg></span>
+        <p class="eyebrow">Product &amp; Marketing Lead</p>
+        <h1>Improving User Experience</h1>
+        <p class="lede">A telehealth company in Europe was losing ground. Patient and clinician reviews were sinking, and an aging platform made every visit harder than it needed to be. As product and marketing lead, I set out to breathe new life into it: I started with the people who used it every day, rebuilt the experience around them, and made trust the heart of the relaunch.</p>
+      </div>
+      <figure class="plate th-art-fig" style="margin:0"><img src="assets/illustrations/telehealth-hero.svg" alt="Illustration of a telehealth app screen: a personal care plan with steps from telling us how you feel to a follow-up, and a book appointment button, surrounded by colorful health icons" style="width:100%;height:auto;display:block"></figure>
+    </div>
+  </section>
+
+
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>What I Did</h2>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Listened First</h3><p>People don't look for care on a good day. They are worried, busy or unsure where to turn. Background research, a survey and conversations showed me what they needed, and what made them hesitate before asking for help.</p></div></li>
+        <li><div><h3>Mapped the Journey</h3><p>With providers and patients, I mapped every step from the first worry to the follow-up, and removed the places where people felt lost.</p></div></li>
+        <li><div><h3>Found One Message</h3><p>One simple promise, backed by proof and benefits, in a voice that is warm, expert and easy to understand.</p></div></li>
+        <li><div><h3>Led With Trust</h3><p>Safety and privacy were built in, so I could promise people their care was in good hands.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Results</h2>
+      </div>
+      <div class="readouts">
+        <div class="readout"><span class="num">4.9★</span><p>App Store rating.</p></div>
+        <div class="readout"><span class="num">80%</span><p>Of patients helped within 30 minutes.</p></div>
+        <div class="readout"><span class="num">+22</span><p>Point increase in Net Promoter Score.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="next" aria-label="Story navigation">
+  <div class="wrap"><a class="prev" href="citrine.html">← Previous</a><a class="nxt" href="fooducate.html">Next →</a></div>
+</nav>
+<footer class="site"><div class="wrap"><p class="contact"><a href="https://www.linkedin.com/in/renee-boissiere/" target="_blank" rel="noopener">LinkedIn</a></p>All company names, logos, products, images and trademarks belong to their respective owners and are shown only to illustrate my work. Illustrations are original.</div></footer>
+</body>
+</html>

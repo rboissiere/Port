@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Expanding Audiences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+<style>
+/* Citrine page: brand colors from citrine.io (orange #e96e01, teal #006793, navy #13516e, soft lavender/peach/mint/blue/pink). Panels are fixed light colors with their own dark ink so they read in either theme. */
+.c-citrine { --cit-orange:#e96e01; --cit-ink:#14232a; --cit-ink2:#3b4b52; }
+.c-citrine .cit-hero-art { position: relative; min-width: 0; padding: 0; background: transparent; }
+.c-citrine .cit-hero-art img { width: 100%; height: auto; display: block; }
+.c-citrine .cit-badge { position: absolute; left: 1rem; right: 1rem; bottom: 1rem; margin: 0; background: #ffffff; color: var(--cit-ink2); border-left: 5px solid var(--cit-orange); border-radius: 12px; padding: 0.75rem 1rem; font: 400 var(--step--1)/1.45 var(--f-mono); box-shadow: 0 8px 24px rgba(19,81,110,.15); }
+.c-citrine .cit-badge b { color: var(--cit-ink); }
+.c-citrine section.block.cit-products, .c-citrine section.block.cit-band, .c-citrine section.block.cit-band + section.block { border-top: 0; }
+.c-citrine .cit-products { background: linear-gradient(180deg, #fff4e8 0%, #fdf0f6 100%); --ink: var(--cit-ink); --ink-2: var(--cit-ink2); color: var(--cit-ink); }
+.c-citrine .cit-products .eyebrow { color: #a24c00; }
+.c-citrine .cit-prod-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.5rem; }
+.c-citrine .cit-prod { border-radius: 20px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; background: #ffffff; box-shadow: 0 10px 30px rgba(19,81,110,.12); min-width: 0; }
+.c-citrine .cit-prod-art { padding: 1.5rem; display: grid; place-items: center; min-height: 15rem; }
+.c-citrine .cit-prod.vl .cit-prod-art { background: linear-gradient(135deg, #ece8f6, #d9ecf7); }
+.c-citrine .cit-prod.ca .cit-prod-art { background: linear-gradient(135deg, #ffb066, #e96e01); }
+.c-citrine .cit-prod-art img { width: 100%; height: auto; max-height: 20rem; object-fit: contain; }
+.c-citrine .cit-prod.ca .cit-prod-art img { border-radius: 8px; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+.c-citrine .cit-prod-text { padding: 1.4rem 1.5rem 1.6rem; display: grid; gap: 0.5rem; align-content: start; }
+.c-citrine .cit-prod-text h3 { font-size: var(--step-2); }
+.c-citrine .cit-prod.vl h3 { color: #5a3fa6; }
+.c-citrine .cit-prod.ca h3 { color: #a24c00; }
+.c-citrine .cit-prod-text p { color: var(--cit-ink2); margin: 0; }
+.c-citrine .cit-prod-logo { height: 4rem; width: auto; justify-self: start; }
+.c-citrine .cit-gap { margin-top: 2.5rem; }
+.c-citrine .cit-kicker { font: 400 var(--step--1)/1.45 var(--f-mono); color: var(--ink-2); margin: 0 0 1rem; }
+.c-citrine .cit-kicker b { color: var(--ink); }
+.c-citrine .cit-moments { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; }
+.c-citrine .cit-moments li { border-radius: 20px; padding: 1.5rem; display: grid; gap: .6rem; align-content: start; color: var(--cit-ink); }
+.c-citrine .cit-moments .m1 { background: #d8f0e2; }
+.c-citrine .cit-moments .m2 { background: #f8dbe9; }
+.c-citrine .cit-moments .m3 { background: #dbe7fa; }
+.c-citrine .cit-moments img { width: 4.5rem; height: 4.5rem; }
+.c-citrine .cit-moments .n { font: 800 2.6rem/1 var(--f-display); font-stretch: 115%; }
+.c-citrine .cit-moments .m1 .n { color: #1f7a4a; }
+.c-citrine .cit-moments .m2 .n { color: #a3245f; }
+.c-citrine .cit-moments .m3 .n { color: #1f5fb8; }
+.c-citrine .cit-moments p { margin: 0; font: 650 var(--step-1)/1.3 var(--f-display); color: var(--cit-ink); }
+.c-citrine .cit-band { background: linear-gradient(135deg, #13516e 0%, #006793 60%, #2a7fa8 100%); color: #ffffff; --ink: #ffffff; --ink-2: #dcebf2; --rule: rgba(255,255,255,.25); }
+.c-citrine .cit-band .eyebrow { color: #dcebf2; }
+.c-citrine .cit-method { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 2.5rem; align-items: start; }
+.c-citrine .cit-band .steps li::before { color: #ffb066; }
+.c-citrine .cit-card { position: sticky; top: 5rem; }
+.c-citrine .cit-card .frame { background: #ffffff; padding: 1rem; border-radius: 18px; }
+.c-citrine .cit-card figcaption { color: var(--ink-2); }
+.c-citrine .cit-card figcaption b { color: var(--ink); }
+.c-citrine .cit-ba { margin-bottom: 2rem; }
+.c-citrine .cit-ba-row { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1.3fr); gap: 1rem; align-items: stretch; }
+.c-citrine .cit-before, .c-citrine .cit-after { border-radius: 20px; padding: 1.6rem 1.6rem 1.8rem; display: grid; gap: .5rem; align-content: start; }
+.c-citrine .cit-before { background: #e6e9ec; color: #2b3a40; }
+.c-citrine .cit-after { background: linear-gradient(135deg, #ff9a3c, #e96e01); color: #1b1206; }
+.c-citrine .cit-ba .tag { font: 600 .8rem/1 var(--f-mono); letter-spacing: .1em;  }
+.c-citrine .cit-ba-row p { margin: 0; font: 750 var(--step-2)/1.15 var(--f-display); font-stretch: 108%; }
+.c-citrine .cit-arrow { display: grid; place-items: center; font: 800 2.5rem/1 var(--f-display); color: var(--cit-orange); }
+.c-citrine .cit-shot .frame { background: linear-gradient(135deg, #e3ecfa, #ece8f6); padding: clamp(1rem,3vw,2.5rem); border-radius: 20px; }
+.c-citrine .cit-stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; margin-top: 2.5rem; }
+.c-citrine .cit-stats > div { border-radius: 18px; padding: 1.5rem 1.4rem; display: grid; gap: .5rem; align-content: start; color: var(--cit-ink); }
+.c-citrine .cit-stats .num { font: 800 clamp(2.4rem, 5vw, 3.4rem)/1 var(--f-display); font-stretch: 112%; letter-spacing: -0.02em; }
+.c-citrine .cit-stats p { margin: 0; color: var(--cit-ink2); font-size: var(--step--1); line-height: 1.5; }
+.c-citrine .cit-stats .s1 { background: #e96e01; } .c-citrine .cit-stats .s1 .num, .c-citrine .cit-stats .s1 p { color: #1b1206; }
+.c-citrine .cit-stats .s2 { background: #ece8f6; } .c-citrine .cit-stats .s2 .num { color: #5a3fa6; }
+.c-citrine .cit-stats .s3 { background: #d8f0e2; } .c-citrine .cit-stats .s3 .num { color: #1f7a4a; }
+.c-citrine .cit-stats .s4 { background: #006793; } .c-citrine .cit-stats .s4 .num, .c-citrine .cit-stats .s4 p { color: #ffffff; }
+.c-citrine .cit-stats .s5 { background: #f8dbe9; } .c-citrine .cit-stats .s5 .num { color: #a3245f; }
+.c-citrine .cit-stats .s6 { background: #fde1c4; } .c-citrine .cit-stats .s6 .num { color: #a24c00; }
+@media (max-width: 52rem) {
+  .c-citrine .cit-prod-grid, .c-citrine .cit-moments, .c-citrine .cit-method, .c-citrine .cit-stats { grid-template-columns: minmax(0,1fr); }
+  .c-citrine .cit-card { position: static; }
+  .c-citrine .cit-ba-row { grid-template-columns: minmax(0,1fr); }
+  .c-citrine .cit-arrow { transform: rotate(90deg); }
+  .c-citrine .cit-hero-art { padding-bottom: 1rem; }
+  .c-citrine .cit-badge { position: static; margin-top: 1rem; }
+}
+@media (min-width: 52.01rem) and (max-width: 68rem) { .c-citrine .cit-stats { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.c-citrine .cit-method { grid-template-columns: minmax(0, 1fr) !important; }
+.c-citrine .cit-method > figure { max-width: 36rem; margin-inline: auto; }
+footer.site .contact { margin: 0 0 .6rem; font-weight: 600; font-size: 1rem; color: #14232a; }
+footer.site .contact a { color: inherit; }
+</style>
+</head>
+<body class="c-citrine">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="index.html">Renée Boissière<span>.</span></a>
+    <nav class="nav" aria-label="Case studies">
+      <a href="hygiena-ensure-touch.html">Hygiena</a>
+      <a href="hygiena-suretrend-cloud.html">SureTrend</a>
+      <a href="basepair.html">Basepair</a>
+      <a href="citrine.html" aria-current="page">Citrine</a>
+      <a href="telehealth.html">Telehealth</a>
+      <a href="fooducate.html">Fooducate</a>
+      <a href="tennis.html">Tennis</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="brand-logo"><img src="assets/photos/citrine/logo.svg" alt="Citrine Informatics"></span>
+        <p class="eyebrow">Product Management</p>
+        <h1>Expanding Audiences</h1>
+        <p class="lede">Citrine makes powerful software for scientists. But powerful can feel intimidating. I sat with the people who used it, learned where they felt lost, and worked with them to make the first experience feel guided and easy.</p>
+      </div>
+      <div class="cit-hero-art">
+        <img src="assets/illustrations/citrine-hero-ui.svg" alt="Illustration of the product experience: set a goal, see ranked candidate formulas, compare predictions with the target, and get an AI suggestion with a friendly tip for newcomers">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>What I Did</h2>
+      </div>
+      <div class="cit-method">
+        <ol class="steps">
+          <li><div><h3>Interviewed Customers</h3><p>I interviewed scientists and their teams and mapped how a working day unfolds for each individual, to understand their realities.</p></div></li>
+          <li><div><h3>Named the Pain Points</h3><p>I turned those conversations into a short list of problems, ranked by how much they mattered to people.</p></div></li>
+          <li><div><h3>Found New Audiences</h3><p>Listening showed me two new groups of people the software could serve, beyond the specialists. I made sure the two products I brought to market, VirtualLab and Catalyst, spoke to them.</p></div></li>
+          <li><div><h3>Built Early Buzz</h3><p>I showed the designs back to customers early. Their feedback sharpened the work, and they were eager for it before it was ready.</p></div></li>
+          <li><div><h3>Made Day One Easy</h3><p>Friendly tips at each step let newcomers start on their own.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Results</h2>
+      </div>
+      <figure class="plate cit-ba">
+        <div class="cit-ba-row">
+          <div class="cit-before"><span class="tag">Before</span><p>Weeks of guided sessions.</p></div>
+          <div class="cit-arrow" aria-hidden="true">→</div>
+          <div class="cit-after"><span class="tag">After</span><p>A self-guided start.</p></div>
+        </div>
+      </figure>
+      <div class="readouts">
+        <div class="readout"><span class="num">+27%</span><p>More people actively using it.</p></div>
+        <div class="readout"><span class="num">+37%</span><p>More people succeeded on their first try.</p></div>
+        <div class="readout"><span class="num">~3 hrs</span><p>Given back to each person, every day.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="next" aria-label="Story navigation">
+  <div class="wrap"><a class="prev" href="basepair.html">← Previous</a><a class="nxt" href="telehealth.html">Next →</a></div>
+</nav>
+<footer class="site"><div class="wrap"><p class="contact"><a href="https://www.linkedin.com/in/renee-boissiere/" target="_blank" rel="noopener">LinkedIn</a></p>All company names, logos, products, images and trademarks belong to their respective owners and are shown only to illustrate my work. Illustrations are original.</div></footer>
+</body>
+</html>
